@@ -6,7 +6,7 @@ pipeline {
    }
 
   
-  environments {
+  environment {
   	MY_KUBECONFIG = credentials('k8sconfig')
   }
   
