@@ -13,7 +13,7 @@ pipeline {
   stages {
     stage('Deploy K8s') {
       steps {
-      	sh 'kubectl apply --kubeconfig ${MY_KUBECONFIG} -f application.yaml -n ${DEPLOY_TO}'
+      	sh "kubectl apply --kubeconfig ${MY_KUBECONFIG} -f application.yaml -n ${DEPLOY_TO}"
       }
     }
   }
