@@ -2,7 +2,7 @@ pipeline {
   agent any
   
     parameters {
-  	choice choices: ['qa', 'prod'], description: 'Select namespace for deployment', name: 'DEPLOY_TO' 
+  	choice choices: ['qa', 'production'], description: 'Select namespace for deployment', name: 'DEPLOY_TO' 
    }
 
   
