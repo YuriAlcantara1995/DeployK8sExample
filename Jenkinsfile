@@ -3,6 +3,7 @@ pipeline {
   
     parameters {
   	choice choices: ['qa', 'production'], description: 'Select namespace for deployment', name: 'DEPLOY_TO' 
+  	string(name: 'IMAGE_TAG', description: 'docker image tag')
    }
 
   
@@ -13,6 +14,7 @@ pipeline {
   stages {
     stage('Deploy K8s') {
       steps {
+      	//replace image tag in application.yaml file
       	sh "kubectl apply --kubeconfig ${MY_KUBECONFIG} -f application.yaml -n ${DEPLOY_TO}"
       }
     }

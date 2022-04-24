@@ -7,7 +7,7 @@ metadata:
   name: sample
 spec:
   containers:
-  - image: yuriao/devops:22
+  - image: yuriao/devops:25
     imagePullPolicy: IfNotPresent
     name: sample
 ---
