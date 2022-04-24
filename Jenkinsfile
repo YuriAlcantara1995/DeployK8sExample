@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Deploy K8s') {
       steps {
-      	//replace image tag in application.yaml file
+      	sh "sed -i s/IMAGE_TAG/${IMAGE_TAG}/g application.yaml"
       	sh "kubectl apply --kubeconfig ${MY_KUBECONFIG} -f application.yaml -n ${DEPLOY_TO}"
       }
     }

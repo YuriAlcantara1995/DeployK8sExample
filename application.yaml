@@ -7,7 +7,7 @@ metadata:
   name: sample
 spec:
   containers:
-  - image: yuriao/devops:25
+  - image: yuriao/devops:IMAGE_TAG
     imagePullPolicy: IfNotPresent
     name: sample
 ---
@@ -19,9 +19,9 @@ metadata:
   name: sample
 spec:
   ports:
-  - port: 9093
+  - port: 9080
     protocol: TCP
-    targetPort: 9093
+    targetPort: 9080
   selector:
     run: sample
   type: ClusterIP
